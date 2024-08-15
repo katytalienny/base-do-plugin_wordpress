@@ -1,0 +1,25 @@
+<?php
+
+
+function adicionar_menu_analytics_facil() {
+
+add_menu_page(
+
+'Configurações do Google Analytics',   // Título da página
+
+'Google Analytics',           // Texto no menu
+
+'manage_options',            // Capacidade necessária para acessar
+
+'analytics-facil-settings',       // Slug da página
+
+'pagina_configuracoes_analytics_facil' // Função de callback para a página
+
+);
+
+}
+
+add_action('admin_menu', 'adicionar_menu_analytics_facil');
+
+//Para criar um menu no wp-admin, usaremos a função add_menu_page(). Veja como fazer isso:
+
