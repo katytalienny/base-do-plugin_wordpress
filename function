@@ -1,0 +1,35 @@
+function pagina_configuracoes_analytics_facil() {
+
+if (isset($_POST['codigo_analytics'])) {
+
+$codigo_analytics = sanitize_text_field($_POST['codigo_analytics']);
+
+update_option('codigo_analytics', $codigo_analytics);
+
+echo '<div class="updated"><p>Configurações salvas com sucesso!</p></div>';
+
+}
+
+$codigo_analytics = get_option('codigo_analytics');
+
+?>
+
+<div class="wrap">
+
+<h2>Configurações do Google Analytics</h2>
+
+<form method="post" action="">
+
+<label for="codigo_analytics">Insira o código de rastreamento do Google Analytics:</label><br>
+
+<textarea name="codigo_analytics" rows="6" cols="60"><?php echo esc_textarea($codigo_analytics); ?></textarea><br>
+
+<input type="submit" class="button button-primary" value="Salvar Configurações">
+
+</form>
+
+</div>
+
+<?php
+
+}
